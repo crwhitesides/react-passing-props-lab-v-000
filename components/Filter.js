@@ -48,7 +48,7 @@ const Filter = (props) => {
 
 Filter.defaultProps = {
   filters: [],
-  handleChange: function() {}
+  handleChange: () => {}
 }
 
 export default Filter;

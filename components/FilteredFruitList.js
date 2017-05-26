@@ -30,12 +30,12 @@ import React from 'react';
 
 // Stateless implementation of FilteredFruitList "pure" function:
 const FilteredFruitList = (props) => {
-  const list = !props.filter ? props.fruit :
-  props.fruit.filter(fruit => fruit.fruit_type == props.filter)
+  const fruitList = !props.filter ? props.fruit :
+    props.fruit.filter(i => i.fruit_type == props.filter)
 
   return(
     <ul className='fruit-list'>
-      {list.map((i, idx) => <li key={idx}>{i.char}</li>)}
+      {fruitList.map((fruit, i) => <li key={i}>{fruit.char}</li>)}
     </ul>
   )
 }
