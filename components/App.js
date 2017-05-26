@@ -21,14 +21,18 @@ class App extends Component {
     }
 
     this.handleFilterChange = this.handleFilterChange.bind(this)
-    this.fetchFilters = this.fetchFilters.bind(this)
-    this.fetchFruit = this.fetchFruit.bind(this)
   }
 
     componentWillMount() {
       this.fetchFilters()
       this.fetchFruit()
     }
+
+    /*
+    `fetchFruit()` and `fetchFilters()` are neither event handlers nor callbacks
+    and, therefore, don't need to be bound in the constructor of the component.
+    See: http://reactkungfu.com/2015/07/why-and-how-to-bind-methods-in-your-react-component-classes/
+    */
 
     fetchFilters() {
       fetch('/api/fruit_types')
